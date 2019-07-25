@@ -1,0 +1,24 @@
+<template>
+  <view>
+    <yz-button itemlist="{{itemlist}}"></yz-button>
+  </view>
+</template>
+
+<script>
+  import { createPage } from '@mpxjs/core'
+
+  createPage({
+    onLoad () {},
+    data:{
+      itemlist: ['相册', '拍照','取消']
+    }
+  })
+</script>
+
+<script type="application/json">
+  {
+    "usingComponents": {
+      "yz-button": "../components/ActionSheet/ActionSheet"
+    }
+  }
+</script>
