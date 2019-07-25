@@ -1,0 +1,75 @@
+<template>
+    <view>
+        <yz-coupon-wrap>
+            <view class="top" slot="top">
+              <input type="text" placeholder="请输入优惠码"/>
+              <button type="button" bind:tap="ontapcoupon">兑换</button>
+            </view>
+            <van-tabs slot="tab" active="{{ active }}" bind:change="onChange">
+                <van-tab title="可使用优惠券（1）">
+                    <yz-coupon-style
+                      describe="描述信息"
+                      price="1.5元"
+                      limit="无使用门槛"
+                      detail="最多优惠12元"
+                      name="优惠券名称"
+                      effective="有效期：2019.08.10 - 2019.12.30"
+                    >
+                    </yz-coupon-style>
+                </van-tab>
+                <van-tab title="不可使用优惠券（1）">
+                    <yz-coupon-style
+                      switcherac="false"
+                      describe="描述信息"
+                      price="1.5元"
+                      limit="无使用门槛"
+                      detail="最多优惠12元"
+                      name="优惠券名称"
+                      effective="有效期：2019.08.10 - 2019.12.30"
+                    >
+                    </yz-coupon-style>
+                </van-tab>
+            </van-tabs>
+        </yz-coupon-wrap>
+    </view>
+</template>
+
+<script>
+  import { createPage } from '@mpxjs/core'
+
+  createPage({
+    onLoad () {}
+  })
+</script>
+
+<style>
+.top{
+  height: 50rpx;
+  padding: 5rpx 0;
+  display: flex;
+}
+.top input{
+  flex-grow: 1;
+  padding-left: 20rpx;
+  font-size:26rpx;
+  line-height:50rpx;
+}
+.top button{
+  width: 150rpx;
+  height: 50rpx;
+  font-size:30rpx;
+  line-height:50rpx;
+  color:#333;
+}
+</style>
+
+<script type="application/json">
+  {
+    "usingComponents": {
+      "yz-coupon-wrap": "../components/business/coupon/couponwrap",
+      "yz-coupon-style": "../components/business/coupon/couponstyle",
+      "van-tab": "vant-weapp/dist/tab/index",
+      "van-tabs": "vant-weapp/dist/tabs/index"
+    }
+  }
+</script>

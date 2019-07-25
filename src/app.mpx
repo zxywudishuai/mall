@@ -14,6 +14,11 @@
 <script type="application/json">
   {
     "pages": [
+      "./pages/testnewcouponwrap",
+      "./pages/testcouponstyle",
+      "./pages/testcouponwrap",
+      "./pages/testgoodsstyle2",
+      "./pages/testgoodsstyle1",
       "./pages/index"
     ]
   }
