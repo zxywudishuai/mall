@@ -1,0 +1,74 @@
+<template>
+  <view class="warp"> 
+    <image wx:for="{{imagelist}}" src="{{item}}" wx:if="{{index===counter}}"/>
+    <view class="list">
+      <view wx:for="{{imagelist}}" class="item {{index===counter?'ac':'av'}}"></view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import { createComponent } from '@mpxjs/core'
+  createComponent({
+    properties: {
+      imagelist:Array,
+      autoplayitem:Number,
+  },
+    data: {
+      counter: 0,
+    },
+    lifetimes: {
+    attached: function() {
+      setInterval(() => {
+        this.data.counter++;
+        this.data.counter%=this.data.imagelist.length;
+        this.setData({
+          counter:this.data.counter
+        })
+      }, this.data.autoplayitem || 2000);
+    },
+    detached: function() {
+    },
+  },
+  })
+</script>
+
+
+<style>
+.warp{
+  position: relative;
+  width:750rpx;
+}
+
+image{
+  width:750rpx;
+  display:block;
+} 
+.list{
+  position: absolute;
+  bottom: 40rpx;
+  right:0;
+}
+.item{
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #ccc;
+  border-radius: 50%;
+  float: left;
+  margin:0 10rpx;
+  z-index: 9;
+}
+.ac{
+  border: 1px solid #333;
+  background-color:#999;
+}
+
+</style>
+
+<script type="application/json">
+  {
+    "component": true,
+    "usingComponents": {
+    }
+  }
+</script>
