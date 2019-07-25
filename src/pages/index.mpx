@@ -1,5 +1,7 @@
 <template>
-  <list></list>
+  <view>
+    <addressEdit/>
+  </view>
 </template>
 
 <script>
@@ -13,7 +15,8 @@
 <script type="application/json">
   {
     "usingComponents": {
-      "list": "../components/list"
+      "list": "../components/list",
+      "addressEdit":"../components/mamingyuan/addressEdit"
     }
   }
 </script>
